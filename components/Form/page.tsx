@@ -16,7 +16,7 @@ const AppointmentLetterForm = ({...props})=>{
                         <input type="text" name="street" placeholder="Street Address" value={props.formData.street} onChange={props.handleChange} className="w-full border p-2 rounded-md" />
                         <input type="text" name="city" placeholder="City" value={props.formData.city} onChange={props.handleChange} className="w-full border p-2 rounded-md" />
                         <input type="text" name="state" placeholder="State" value={props.formData.state} onChange={props.handleChange} className="w-full border p-2 rounded-md" />
-                        <input type="text" name="zip" placeholder="ZIP Code" value={props.formData.zip} onChange={props.handleChange} className="w-full border p-2 rounded-md" />
+                        <input type="number" name="zip" placeholder="ZIP Code" value={props.formData.zip} onChange={props.handleChange} className="w-full border p-2 rounded-md" />
                     
 
                        

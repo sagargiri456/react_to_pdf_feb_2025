@@ -1,7 +1,7 @@
 'use client'
-import AppointmentLetterForm from "@/app/Form/page"
+import AppointmentLetterForm from "@/components/Form/page"
 import { useState } from "react";
-import AppointmentLetter from "./Appointment/page";
+import AppointmentLetter from "@/components/Appointment/page";
 
 export default function Home() {
   const [isSubmitted,setIsSubmitted] = useState(false);
@@ -21,7 +21,6 @@ export default function Home() {
 });
 const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
     setFormData({...formData,[e.target.name]:e.target.value})
-    console.log("changes Saved.")
 }
 
 

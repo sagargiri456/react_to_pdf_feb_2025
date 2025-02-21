@@ -2,8 +2,23 @@
 
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
+interface AppointmentProps {
+  formData: {
+    name: string;
+    street: string;
+    city: string;
+    state: string;
+    zip: string;
+    role: string;
+    date_of_joining: string;
+    time_from: string;
+    time_to: string;
+    starting_day: string;
+    ending_day: string;
+  };
+}
 
-const AppointmentLetter = ({...props}) => {
+const AppointmentLetter:React.FC<AppointmentProps> = ({formData}) => {
   return (
     <div className="flex flex-col items-center p-6">
       {/* Header Section */}
@@ -35,15 +50,15 @@ const AppointmentLetter = ({...props}) => {
           <p>Madhya Pradesh, 462022</p>
           <p className="mt-4">October 3, 2024</p>
 
-          <p className="mt-4 font-semibold">{props.formData.name}</p>
+          <p className="mt-4 font-semibold">{formData.name}</p>
           <p>Jyotish Path</p>
           <p>Ramkrishna Nagar</p>
           <p>Patna, Bihar, 800027</p>
 
-          <p className="mt-6">Greetings <span className="font-semibold">{props.formData.name}</span>,</p>
-          <p className="mt-2">We are pleased to confirm your appointment as a <span className="font-semibold">{props.formData.role}</span> at Weppdev Technologies, following your successful interview and your formal acceptance of the offer.</p>
-          <p className="mt-2">Your joining date is <span className="font-semibold">{props.formData.date_of_joining}</span>, and we look forward to welcoming you to our team.</p>
-          <p className="mt-2">Your working hours will be from <span className="font-semibold">{props.formData.time_from} to {props.formData.time_to}</span>, Monday to Friday.</p>
+          <p className="mt-6">Greetings <span className="font-semibold">{formData.name}</span>,</p>
+          <p className="mt-2">We are pleased to confirm your appointment as a <span className="font-semibold">{formData.role}</span> at Weppdev Technologies, following your successful interview and your formal acceptance of the offer.</p>
+          <p className="mt-2">Your joining date is <span className="font-semibold">{formData.date_of_joining}</span>, and we look forward to welcoming you to our team.</p>
+          <p className="mt-2">Your working hours will be from <span className="font-semibold">{formData.time_from} to {formData.time_to}</span>, Monday to Friday.</p>
           <p className="mt-2">We expect all employees and interns to create a positive work environment, adhere to our company&apos;s work culture, and contribute to maintaining a collaborative, respectful, and productive workplace.</p>
           <p className="mt-4">Once again, congratulations on your appointment! We look forward to your contributions and your professional growth with us.</p>
 
