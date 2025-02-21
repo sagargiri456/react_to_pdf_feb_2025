@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { FaMapMarkerAlt, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import React from "react";
+import { FaMapMarkerAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 const AppointmentLetter = ({...props}) => {
   return (
@@ -44,7 +44,7 @@ const AppointmentLetter = ({...props}) => {
           <p className="mt-2">We are pleased to confirm your appointment as a <span className="font-semibold">{props.formData.role}</span> at Weppdev Technologies, following your successful interview and your formal acceptance of the offer.</p>
           <p className="mt-2">Your joining date is <span className="font-semibold">{props.formData.date_of_joining}</span>, and we look forward to welcoming you to our team.</p>
           <p className="mt-2">Your working hours will be from <span className="font-semibold">{props.formData.time_from} to {props.formData.time_to}</span>, Monday to Friday.</p>
-          <p className="mt-2">We expect all employees and interns to create a positive work environment, adhere to our company's work culture, and contribute to maintaining a collaborative, respectful, and productive workplace.</p>
+          <p className="mt-2">We expect all employees and interns to create a positive work environment, adhere to our company&apos;s work culture, and contribute to maintaining a collaborative, respectful, and productive workplace.</p>
           <p className="mt-4">Once again, congratulations on your appointment! We look forward to your contributions and your professional growth with us.</p>
 
           <p className="mt-6">Regards,</p>

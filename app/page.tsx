@@ -1,5 +1,4 @@
 'use client'
-import Image from "next/image";
 import AppointmentLetterForm from "@/app/Form/page"
 import { useState } from "react";
 import AppointmentLetter from "./Appointment/page";

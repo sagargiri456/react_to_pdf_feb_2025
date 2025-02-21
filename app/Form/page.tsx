@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState } from "react"
+import React from "react"
 const AppointmentLetterForm = ({...props})=>{
 
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClick = () => {
         props.setIsSubmitted(true);
       };
 
