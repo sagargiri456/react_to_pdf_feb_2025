@@ -8,6 +8,7 @@ export default function Home() {
   const [formData,setFormData] = useState({
     name: '',
     street: '',
+    area:'',
     city: '',
     state: '',
     zip: '',
