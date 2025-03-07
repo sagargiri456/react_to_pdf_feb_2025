@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image"
 import React from "react";
 import { usePDF } from "react-to-pdf";
 
@@ -40,10 +41,12 @@ const AppointmentLetter: React.FC<AppointmentProps> = ({ formData }) => {
         className="relative w-[800px] h-[1100px]  bg-white shadow-md overflow-hidden"
       >
         {/* ✅ Background Template Image */}
-        <img
+        <Image
           src="/image.png" // Replace with your actual image path
           alt="Template"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          width={200}
+          height={100}
         />
 
         {/* ✅ Text Overlay */}
