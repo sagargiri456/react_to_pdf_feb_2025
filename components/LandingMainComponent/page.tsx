@@ -3,7 +3,6 @@
 import Card from "@/components/Card/page"
 import ButtonCard from "@/components/ButtonCard/ButtonCard";
 import { useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
 
 interface LandingMainProps {
   selectedTemplates: string[];

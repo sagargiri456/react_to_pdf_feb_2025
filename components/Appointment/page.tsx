@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import { usePDF } from "react-to-pdf";
 
 
@@ -81,7 +81,7 @@ const AppointmentLetter: React.FC<AppointmentProps> = ({ formData }) => {
             Monday to Friday.
           </p>
           <p className="mt-2">
-            We expect all employees and interns to create a positive work environment, adhere to our company's 
+            We expect all employees and interns to create a positive work environment, adhere to our company`$apos;`s 
             work culture, and contribute to maintaining a collaborative, respectful, and productive workplace.
           </p>
           <p className="mt-4">

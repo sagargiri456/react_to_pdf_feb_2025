@@ -3,8 +3,22 @@ import AppointmentLetter from "../Appointment/page";
 import AppointmentLetterForm from "../Form/page";
 import { useLocation } from "react-router";
 
+interface FormDataType {
+    name: string;
+    street: string;
+    area: string;
+    city: string;
+    state: string;
+    zip: string;
+    role: string;
+    date_of_joining: string;
+    time_from: string;
+    time_to: string;
+    starting_day: string;
+    ending_day: string;
+  }
 //mapping the key of the template to the component. 
-const TEMPLATE_COMPONENTS: Record<string, React.FC<{ formData: any }>> = {
+const TEMPLATE_COMPONENTS: Record<string, React.FC<{ formData :FormDataType}>> = {
     "appointment": AppointmentLetter,
   };
 
