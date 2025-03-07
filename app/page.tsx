@@ -1,28 +1,13 @@
-'use client'
-import AppointmentLetterForm from "@/components/Form/page"
-import { useState } from "react";
-import AppointmentLetter from "@/components/Appointment/page";
+"use client";
+
+import LandingPage from "@/components/Landing/page";
+import {BrowserRouter,Routes,Route} from 'react-router';
+import FormAndTemplatePageComponent from '@/components/FormAndTemplatePageComponent/page'
 
 export default function Home() {
-  const [isSubmitted,setIsSubmitted] = useState(false);
-  const [formData,setFormData] = useState({
-    name: '',
-    street: '',
-    area:'',
-    city: '',
-    state: '',
-    zip: '',
-    role: '',
-    date_of_joining: '',
-    time_from: '',
-    time_to: '',
-    starting_day: '',
-    ending_day: '',
+ 
 
-});
-const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
-    setFormData({...formData,[e.target.name]:e.target.value})
-}
+
 
 
 
@@ -31,7 +16,13 @@ const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
       {/* <AppointmentLetterForm formData = {formData} handleChange={handleChange} setFormData = {setFormData}/>
       {isSubmitted && <AppointmentLetter formData={formData} />} */}
 
-      {isSubmitted ? <AppointmentLetter formData={formData} /> : <AppointmentLetterForm formData = {formData} handleChange={handleChange} setIsSubmitted={setIsSubmitted} setFormData = {setFormData}/>}
+      {/* {isSubmitted ? <AppointmentLetter formData={formData} /> : <AppointmentLetterForm formData = {formData} handleChange={handleChange} setIsSubmitted={setIsSubmitted} setFormData = {setFormData}/>} */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/formpage" element={<FormAndTemplatePageComponent/>}/>
+        </Routes>
+      </BrowserRouter>
       
     </div>
   );
