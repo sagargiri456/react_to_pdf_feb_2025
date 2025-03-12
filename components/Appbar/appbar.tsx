@@ -1,7 +1,16 @@
 import {  useNavigate } from "react-router";
 
+type selectedTemplatesProps = {
+    id:string
+    name:string
+    imageUrl:string
+}
 
-const Appbar = ({selectedTemplates}:{selectedTemplates:string[]}) =>{
+type AppbarProps = {
+    selectedTemplates:selectedTemplatesProps[];
+}
+
+const Appbar:React.FC<AppbarProps> = ({selectedTemplates}) =>{
    
     const navigate = useNavigate();
     return(

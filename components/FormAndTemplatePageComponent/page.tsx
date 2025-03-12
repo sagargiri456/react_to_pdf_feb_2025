@@ -17,14 +17,16 @@ interface FormDataType {
     starting_day: string;
     ending_day: string;
   }
-//mapping the key of the template to the component. 
-const TEMPLATE_COMPONENTS: Record<string, React.FC<{ formData :FormDataType}>> = {
-    "appointment": AppointmentLetter,
-  };
+
+  type selectedTemplatesProps = {
+    id:string
+    name:string
+    imageUrl:string
+}
 
 const FormAndTemplatePageComponent = () =>{
     const location = useLocation();
-    const selectedTemplates: string[] = location.state?.selectedTemplates || [];
+    const selectedTemplates: selectedTemplatesProps[] = location.state?.selectedTemplates || [];
      const [isSubmitted,setIsSubmitted] = useState(false);
      const [formData,setFormData] = useState({
         name: '',
@@ -48,17 +50,11 @@ const FormAndTemplatePageComponent = () =>{
     return(
         <div>
             {/* {isSubmitted ?<AppointmentLetter formData={formData} /> : <AppointmentLetterForm formData = {formData} handleChange={handleChange} setIsSubmitted={setIsSubmitted} setFormData = {setFormData}/>} */}
-            {isSubmitted ?(
-        <div>
-          {selectedTemplates.map((template) => {
-            const TemplateComponent = TEMPLATE_COMPONENTS[template];
-            return TemplateComponent ? (
-              <TemplateComponent key={template} formData={formData} />
-            ) : (
-              <p key={template}>Template {template} not found.</p>
-            );
-          })}
-        </div>
+            {isSubmitted ?(selectedTemplates.map((template)=>
+            <div key={template.id}>
+                  <AppointmentLetter  template={template} formData={formData}/>
+           </div>)
+        
       
   ) : <AppointmentLetterForm formData = {formData} handleChange={handleChange} setIsSubmitted={setIsSubmitted} setFormData = {setFormData}/>}
         </div>

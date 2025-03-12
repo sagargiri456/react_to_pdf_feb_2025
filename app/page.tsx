@@ -5,10 +5,6 @@ import {BrowserRouter,Routes,Route} from 'react-router';
 import FormAndTemplatePageComponent from '@/components/FormAndTemplatePageComponent/page'
 
 export default function Home() {
- 
-
-
-
 
 
   return (

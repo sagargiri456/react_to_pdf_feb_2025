@@ -18,9 +18,16 @@ interface AppointmentProps {
     time_from: string;
     time_to: string;
   };
+  template: {
+    id:string;
+    name:string;
+    imageUrl:string;
+  }
 }
 
-const AppointmentLetter: React.FC<AppointmentProps> = ({ formData }) => {
+
+
+const AppointmentLetter: React.FC<AppointmentProps> = ({ formData,template }) => {
   const {toPDF,targetRef} = usePDF({filename:'appointment.pdf'})
   // Function to capture and download the image
   
@@ -41,8 +48,8 @@ const AppointmentLetter: React.FC<AppointmentProps> = ({ formData }) => {
         className="relative w-[800px] h-[1100px]  bg-white shadow-md overflow-hidden"
       >
         {/* ✅ Background Template Image */}
-        <Image
-          src="/image.png" // Replace with your actual image path
+        <img
+          src={template.imageUrl} // Replace with your actual image path
           alt="Template"
           className="absolute inset-0 w-full h-full object-cover z-0"
           width={200}
@@ -56,7 +63,7 @@ const AppointmentLetter: React.FC<AppointmentProps> = ({ formData }) => {
           <h2 className="text-2xl font-bold text-center mt-8">APPOINTMENT LETTER</h2>
 
           {/* Company Details */}
-          <p className="mt-6 font-semibold text-center">Weppdev Technologies</p>
+          <p className="mt-6 font-semibold text-center">{template.name}</p>
           <p className="text-center">09 Kalchuri Incubation Center</p>
           <p className="text-center">Raisen Road, Bhopal, Madhya Pradesh, 462022</p>
           <p className="text-center font-semibold mt-4">October 3, 2024</p>
