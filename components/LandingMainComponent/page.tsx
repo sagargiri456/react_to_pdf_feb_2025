@@ -4,7 +4,7 @@ import Card from "@/components/Card/page"
 import ButtonCard from "@/components/ButtonCard/ButtonCard";
 import {  useTemplateStore } from "@/store/useTemplateStore";
 import { useEffect } from "react";
-import { prisma } from "@/lib/prisma";
+// import { prisma } from "@/lib/prisma";
 
 type selectedTemplatesProps = {
   id:string
@@ -24,11 +24,12 @@ const LandingMainComponent:React.FC<LandingMainProps> = ({selectedTemplates,setS
     const templates = useTemplateStore((state)=>state.templates)
   
   useEffect(() => {
-    const fetchData = async () => {
-      const data = fetchTemplates();
+    // const fetchData = async () => {
+    //   const data = ;
      
-    };
-    fetchData();
+    // };
+    fetchTemplates()
+    // fetchData();
   }, []);
   
   const toggleSelection = (template:selectedTemplatesProps) => {

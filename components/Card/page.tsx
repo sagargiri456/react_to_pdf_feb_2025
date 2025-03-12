@@ -1,4 +1,3 @@
-import Image from "next/image";
 
 type selectedTemplatesProps = {
     id:string
