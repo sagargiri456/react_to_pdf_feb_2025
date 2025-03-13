@@ -1,7 +1,5 @@
+'use client'
 import { fetchTemplatesAction, templateSubmitAction } from "@/actions/templateSubmitAction";
-import { prisma } from "@/lib/prisma";
-import { error } from "console";
-import { SiPrisma } from "react-icons/si";
 import { create } from "zustand";
 
 type Template = {

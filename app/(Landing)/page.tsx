@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
-import Appbar from "../Appbar/appbar";
-import LandingMainComponent from "../LandingMainComponent/page";
+import Appbar from "../../components/Appbar/appbar";
+import LandingMainComponent from "../../components/LandingMainComponent/page";
 
 type selectedTemplatesProps = {
     id:string

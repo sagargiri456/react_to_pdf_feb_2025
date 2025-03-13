@@ -1,7 +1,28 @@
-'use client'
+"use client"
 
 import React from "react"
-const AppointmentLetterForm = ({...props})=>{
+
+interface FormDataType {
+    name: string;
+    street: string;
+    area: string;
+    city: string;
+    state: string;
+    zip: string;
+    role: string;
+    date_of_joining: string;
+    time_from: string;
+    time_to: string;
+    starting_day: string;
+    ending_day: string;
+  }
+
+  interface AppointmentLetterFormProps{
+    formData:FormDataType
+    handleChange:(e: React.ChangeEvent<HTMLInputElement>)=>void;
+    setIsSubmitted:(e:boolean)=>void;
+  }
+const AppointmentLetterForm = (props:AppointmentLetterFormProps)=>{
 
     const handleClick = () => {
         props.setIsSubmitted(true);

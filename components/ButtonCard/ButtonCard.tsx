@@ -1,3 +1,4 @@
+'use client'
 import { UploadButton } from "@/utils/uploadthing";
 import { useTemplateStore } from "@/store/useTemplateStore";
 

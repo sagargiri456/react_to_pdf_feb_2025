@@ -1,22 +1,9 @@
+'use client'
 import { useState } from "react";
-import AppointmentLetter from "../Appointment/page";
-import AppointmentLetterForm from "../Form/page";
-import { useLocation } from "react-router";
+import AppointmentLetter from "@/components/Appointment/page";
+import AppointmentLetterForm from "@/components/Form/page";
+import { useSearchParams } from "next/navigation"; // ✅ Correct way to access query params
 
-// interface FormDataType {
-//     name: string;
-//     street: string;
-//     area: string;
-//     city: string;
-//     state: string;
-//     zip: string;
-//     role: string;
-//     date_of_joining: string;
-//     time_from: string;
-//     time_to: string;
-//     starting_day: string;
-//     ending_day: string;
-//   }
 
   type selectedTemplatesProps = {
     id:string
@@ -25,8 +12,9 @@ import { useLocation } from "react-router";
 }
 
 const FormAndTemplatePageComponent = () =>{
-    const location = useLocation();
-    const selectedTemplates: selectedTemplatesProps[] = location.state?.selectedTemplates || [];
+    const searchParams = useSearchParams();
+    const selectedTemplates: selectedTemplatesProps[] = JSON.parse(searchParams.get("selectedTemplates") || "[]");
+
      const [isSubmitted,setIsSubmitted] = useState(false);
      const [formData,setFormData] = useState({
         name: '',
@@ -56,10 +44,11 @@ const FormAndTemplatePageComponent = () =>{
            </div>)
         
       
-  ) : <AppointmentLetterForm formData = {formData} handleChange={handleChange} setIsSubmitted={setIsSubmitted} setFormData = {setFormData}/>}
+  ) : <AppointmentLetterForm formData = {formData} handleChange={handleChange} setIsSubmitted={() => setIsSubmitted(true)} />}
         </div>
     )
 }
+
 
 
 export default FormAndTemplatePageComponent;
